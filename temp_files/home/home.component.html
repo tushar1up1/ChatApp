@@ -1,0 +1,5 @@
+<form #f="ngForm">
+  <input type="text" [(ngModel)] = "userName" name="user"/>
+  <input type="text" [(ngModel)] = "password" name="password"/>
+  <input type="submit" (click) = "submitFormValues($event)" />
+</form>
