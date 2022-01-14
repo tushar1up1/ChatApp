@@ -1,0 +1,37 @@
+<div id="userChat">
+    <div id="userDiv">
+        <div id="usersHeader">
+            Users Online
+        </div>
+        <div *ngFor="let user of users" class="userSubDiv">
+            <div class="image-inner"><div class="image" [style.background-color]="user.color">{{ user | firstletter}}</div></div>
+            <div (click) = "onUserClicked(user)" class="user" [ngClass]="{active:isActive(user)}">
+                 {{user.userName}}
+            </div>  
+            <p *ngIf="user.isTyping" class="nMsg">typing....</p>
+            <span *ngIf="user.newMessage && !user.isTyping" class="nMsg">New Message <span class="badge badge-success">{{user.countMessage}}</span></span>
+        </div>
+    </div>
+    <div id="messagesDiv">
+            <cdk-virtual-scroll-viewport itemSize="messages.length" (scroll) = "scrolling()" id="messageContent" #messagesContainer *ngIf="messages && messages.length > 0">
+                <div *cdkVirtualFor="let message of messages" [ngClass] = "{fromMsg:isFromMsg(message),toMsg:isToMsg(message)}">
+                     <span class="msgCnt">{{message.message}}</span>
+                     <p class= "msgTime">{{message | date}}</p>
+                 </div>
+            </cdk-virtual-scroll-viewport>
+         <div class="mDivMsg" *ngIf="users.length > 0 && (!messages || messages.length == 0)" #messagesContainer>
+                Start Typing by saying hello!!!
+         </div>
+         <div class="mDivMsg" *ngIf="users.length == 0" #messagesContainer>
+            Please wait until a user comes online
+         </div>
+        <div id="submitDiv">
+           
+            <mat-form-field id="mat-area" *ngIf="users.length > 0">
+                <mat-label>Write a Message</mat-label>
+                <textarea matInput placeholder="Ex. Hey Buddy" [(ngModel)]="message" (keyup) = "typingMsg($event)" (keydown.enter)="sendMsg()"></textarea>
+              </mat-form-field>
+        </div>
+    </div>
+</div>
+

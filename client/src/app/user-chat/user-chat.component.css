@@ -1,0 +1,182 @@
+html *
+{
+    font-family: sans-serif;
+}
+#userChat
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#usersHeader
+{
+    text-align: center;
+    font-size: 1.4em;
+    color: black;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+#userDiv
+{
+    height:500px;
+    width:25%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 5px 2px 5px 2px;
+    overflow: auto;
+}
+#submitDiv > input
+{
+    border: 0px;
+    border-top: 0.5px solid #d9534f;
+}
+
+#messagesDiv
+{
+    height: 500px;
+    width:65%;
+    display: flex;
+    flex-direction: column;
+    margin-left:10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding:10px;
+}
+#submitDiv
+{
+    height:50px;
+}
+#messageContent
+{
+    height: 500px;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x:auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    animation :scroll 10s linear 1s infinite;
+}
+#textarea
+{
+    height: 100%;
+    width:100%;
+    box-sizing: border-box;
+}
+.user
+{
+    display: flex;
+    height: 40px;
+    margin:auto;
+    align-items: center;
+    cursor: pointer;
+    padding:10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: large;
+    text-transform: capitalize;
+}
+.user.active,.user.active:hover
+{
+    background-color: #faa5a2;
+    color:black;
+}
+.user:hover
+{
+    background-color: #cfcfcf;
+}
+.fromMsg
+{
+   background-color: #008bc2;
+   color:white;
+   width: 20%;
+   margin-left: auto;
+}
+.toMsg
+{
+   background-color: #d1d1d1;
+   color:black;
+   width: 20%;
+   
+}
+.nMsg
+{
+    font-size: smaller;
+    opacity: 0.6;
+    position: absolute;
+    top:35%;
+    left:50%;
+    color: black;
+    font-family: cursive;
+}
+.userSubDiv
+{
+    position: relative;
+}
+.fromMsg,.toMsg
+{
+    margin-top:10px;
+    margin-bottom: 5px;
+    padding: 10px 10px 1px 10px;
+    border-radius: 5px;
+    word-wrap: break-word;
+    width: 150px;
+}
+#mat-area
+{
+    width:100%;
+}
+#submitDiv
+{
+    margin-bottom: 20px;
+}
+.msgTime
+{
+    font-size: 10px;
+    margin-top: 5px;
+}
+#userChat
+{
+    margin-bottom: 5%;
+}
+.image
+{
+    height:50px;
+    width:50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white
+}
+.userSubDiv
+{
+    display: flex;
+    height: 60px;
+    margin-bottom: 1%;
+}
+.image-inner
+{
+    width:10%;
+    position: relative;
+}
+.image
+{
+    position: absolute;
+    top:5px;
+}
+.user
+{
+    width: 75%;
+}
+.mDivMsg
+{
+    font-size: 25px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: red;
+    opacity: 0.6;
+    font-weight: bold;
+}
